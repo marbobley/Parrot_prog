@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    xinputGamepad.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    xqTblMgr.h \
+    xinputGamepad.h
 
 FORMS    += mainwindow.ui
