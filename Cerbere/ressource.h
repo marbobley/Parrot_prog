@@ -1,5 +1,33 @@
 #ifndef RESSOURCE
 #define RESSOURCE
 
+
+
+#define TIMER_IHM 15
+#define TIMER_AXES 15
+#define TIMER_BOUTON 15
+
+
+#define NOMBRE_BOUTON 17
+
+#define BOUTON_SELECT 0
+#define BOUTON_LEFT 1
+#define BOUTON_RIGHT 2
+#define BOUTON_START 3
+#define BOUTON_DROITE 5
+#define BOUTON_BAS 6
+#define BOUTON_HAUT 4
+#define BOUTON_GAUCHE 7
+#define BOUTON_L2 8
+#define BOUTON_R2 9
+#define BOUTON_L1 10
+#define BOUTON_R1 11
+#define BOUTON_TRIANGLE 12
+#define BOUTON_ROND 13
+#define BOUTON_CROIX 14
+#define BOUTON_CARRE 15
+#define BOUTON_PLAY 16
+
+
 #endif // RESSOURCE
 

@@ -11,13 +11,23 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Cerbere
 TEMPLATE = app
 
+# Add SFML window library, where Joystick is located
+LIBS += -lsfml-window
+
+
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    xinputGamepad.cpp
+    xinputGamepad.cpp \
+    windowmanette.cpp \
+    mainwindow.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     xqTblMgr.h \
-    xinputGamepad.h
+    xinputGamepad.h \
+    windowmanette.h \
+    mainwindow.h \
+    ressource.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    windowmanette.ui \
+    mainwindow.ui

@@ -1,22 +1,43 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef WINDOWMANETTE_H
+#define WINDOWMANETTE_H
 
 #include <QMainWindow>
+#include <QTimer>
+
+#include "xinputGamepad.h"
+#include "xqTblMgr.h"
+
 
 namespace Ui {
-class MainWindow;
+class WindowManette;
 }
 
-class MainWindow : public QMainWindow
+class WindowManette : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit WindowManette(QWidget *parent = 0);
+    ~WindowManette();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::WindowManette *ui;
+    XInput input;
+    QTimer tmr;
+
+    QTimer tmr_ihm; //Timer de la sortie graphique
+    QTimer tmr_bouton; // Timer pour les boutons -- Latence de 0,2s à mettre
+    QTimer tmr_axes ;
+
+    bool f_haveJoystick;
+signals:
+    void sig_Bouton( int ID);
+    void sig_Axes( float, float, float, float);
+
+public slots:
+    void readJoystickState();
+    void sendSignal(void);
+    void sendAxes(void);
 };
 
-#endif // MAINWINDOW_H
+#endif // WINDOWMANETTE_H
