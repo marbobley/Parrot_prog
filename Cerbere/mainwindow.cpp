@@ -37,12 +37,8 @@ void MainWindow::commandReceive(int ID)
 
 void MainWindow::commandeAxesReceive(float g_v,float g_h,float d_v , float d_h)
 {
-    ui->horizontalSlider->setValue(((1+g_h)*50));
-    ui->verticalSlider->setValue(((1-g_v)*50));
-    ui->horizontalSlider_2->setValue(d_h*100 +50);
-    ui->verticalSlider_2->setValue(d_v*100 +50);
-
-    QString tmp = "Valeur hoeizon :" + QString::number((1-g_h)*50) + "\n"
-                    + "Valeur verti:" + QString::number((g_v+1)*50);
-    ui->textEdit->setText(tmp);
+    ui->horizontalSlider->setValue((1+g_h)*50);
+    ui->verticalSlider->setValue((1-g_v)*50);
+    ui->horizontalSlider_2->setValue((1+d_h)*50);
+    ui->verticalSlider_2->setValue((1-d_v)*50);
 }
